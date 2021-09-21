@@ -7,7 +7,7 @@ const ContactAddress = () => {
     return (
         <div id="contact-address">
             <div className="contact-address-row">
-                <iframe title="Frigian" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12045.414611750355!2d28.722642!3d40.995632!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xacad3034e50d32e!2sfrigian.com%20%7C%20Navlun%20arama%20motoru!5e0!3m2!1str!2str!4v1629718657785!5m2!1str!2str" allowFullScreen="" loading="lazy"></iframe>
+                <iframe title="Frigian" src="https://www.google.com/maps/embed/v1/place?q=frigian.com+%7C+Navlun+arama+motoru&amp;key=AIzaSyCNT-Ezna_0Tut3qJFC9ODjXePQEo5pUDQ" allowFullScreen="" loading="lazy"></iframe>
             </div>
 
             <div className="contact-address-row">

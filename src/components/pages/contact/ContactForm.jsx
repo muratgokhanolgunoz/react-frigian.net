@@ -135,7 +135,7 @@ const ContactForm = () => {
                     </input>
                 </div>      
                 <div className="contact-form-item">
-                    <button className="template-button template-button-dark">{t('contact.form.CONTACT_FORM_BUTTON_LABEL')}</button>
+                    <button className="template-button template-button-dark">{t('buttons.SEND_MESSAGE')}</button>
                 </div>
             </form>
 

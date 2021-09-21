@@ -1,6 +1,24 @@
 {
-    "general": {
-        "404": "Aradığınız Sayfa Bulunamadı"
+    "template_message": {
+        "error": {
+            "NOT_FOUND": "Aradığınız Sayfa Bulunamadı",            
+            "BLOG_SERVER_ERROR": "Sunucu kaynaklı bir sorundan dolayı yazılar listelenemedi"
+        },
+        "warning": {
+            "BLOG_NOT_FOUND": "Seçtiğiniz dil seçimine uygun yazı bulunamadı"
+        },
+        "info": {
+            "WAIT_RESPONSE": "Sunucudan yanıt bekleniyor..."
+        }
+    },
+    "buttons": {
+        "NEXT": "İlerİ",
+        "PREVIOUS": "Gerİ",
+        "SAVE": "Kaydet",
+        "CHECK_PACKAGES": "Paketlere Bak",
+        "SEND_REQUEST": "İstek Gönder",
+        "SEND_MESSAGE": "Mesajı Gönder",
+        "READ_MORE": "Devamı . . ."
     },
     "navbar": {
         "NAVBAR_ITEM_HOME": "Anasayfa",
@@ -15,8 +33,7 @@
     "home": {
         "banner": {
             "BANNER_HEADER": "Dijital Taşıyıcı Platformu",
-            "BANNER_CONTENT": "Yeni Nesil Taşımacılık Yönetim Sistemi ve Entegre Navlun Pazarı",
-            "BANNER_BUTTON": "Paketlere Bak"
+            "BANNER_CONTENT": "Yeni Nesil Taşımacılık Yönetim Sistemi ve Entegre Navlun Pazarı"
         },
         "widgets": {
             "left": {
@@ -28,8 +45,7 @@
                 "form": {
                     "WIDGET_CENTER_FORM_NAME": "Ad Soyad",
                     "WIDGET_CENTER_FORM_PHONE": "Telefon",
-                    "WIDGET_CENTER_FORM_EMAIL": "ePosta",
-                    "WIDGET_CENTER_FORM_BUTTON": "İstek Gönder"
+                    "WIDGET_CENTER_FORM_EMAIL": "ePosta"
                 }
             },
             "right": {
@@ -283,11 +299,6 @@
         "banner": {
             "TITLE": "Üyelik"
         },
-        "button": {
-            "NEXT": "İlerİ",
-            "PREVIOUS": "Gerİ",
-            "SAVE": "Kaydet"
-        },
         "companyForm": {
             "COUNTRY": "Ülke",
             "TAX_NO": "Vergi Numarası",
@@ -336,7 +347,7 @@
             "DOCUMENT_UPLOAD_FILE_SIZE_ERROR": "Belge için dosya boyutu max. 5MB olmalıdır",
             "DEFINE_SUBDOMAIN": "Öncelikle alan adı adı girişi yapmalısınız",
             "REGISTRATION_SUCCESS": "Kayıt başarıyla tamamlandı",
-            "REGISTRATION_ERROR": "Kayıt yapılırken bir sorun oluştu. Lütfen tekrar deneyin"            
+            "REGISTRATION_ERROR": "Kayıt yapılırken bir sorun oluştu. Lütfen tekrar deneyin"
         }
     },
     "faq": {
@@ -405,8 +416,7 @@
             "CONTACT_FORM_INPUT_SUBJECT_PLACEHOLDER": "",
             "CONTACT_FORM_TEXTAREA_MESSAGE_LABEL": "Mesaj",
             "CONTACT_FORM_TEXTAREA_MESSAGE_PLACEHOLDER": "Öneri, talep veya şikayetlerinizi bize yazın",
-            "CONTACT_FORM_INPUT_CAPTCHA_PLACEHOLDER": "Doğrulama kodu",
-            "CONTACT_FORM_BUTTON_LABEL": "Mesajı Gönder"
+            "CONTACT_FORM_INPUT_CAPTCHA_PLACEHOLDER": "Doğrulama kodu"
         },
         "address": {
             "CONTACT_ADDRESS_COMPANY_NAME_LABEL": "Firma Adı",
@@ -429,6 +439,14 @@
                 "CONTACT_NOTIFICATION_FORM_VALIDATION_ERROR_MESSAGE": "Mesaj boş bırakılamaz",
                 "CONTACT_NOTIFICATION_FORM_VALIDATION_ERROR_CAPTCHA": "Lütfen doğrulama kodunu girin"
             }
+        }
+    },
+    "blog": {
+        "banner": {
+            "BLOG_BANNER_TITLE": "Bizden Yazılar"
+        },
+        "body": {
+            "BLOG_SECTION_ITEMS_AUTHOR_PREFIX": "tarafından"
         }
     },
     "footer": {

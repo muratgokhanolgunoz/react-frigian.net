@@ -11,7 +11,9 @@ import Services from '../pages/services/Index'
 import Pricing from '../pages/pricing/Index'
 import Faq from '../pages/faq/Index'
 import Contact from '../pages/contact/Index'
-import NotFound from '../pages/NotFound'
+import Blog from '../pages/blog/Index'
+import Admin from '../admin/layouts/Main'
+import NotFound from '../errors/NotFound'
 import Footer from './Footer'
 import { Switch, Route, withRouter } from "react-router-dom"
 
@@ -50,7 +52,7 @@ const Page = ({ history }) => {
     }, [])
 
     const setCookie = (_language) => {
-        var maxAge = new Date(Date.now() + (24 * 60 * 60 * 1000))
+        var maxAge = new Date(Date.now() + (365 * 24 * 60 * 60 * 1000))
         cookies.set('language', _language, { path: '/', expires: maxAge })
         context.setCookie({
             language: _language,
@@ -91,6 +93,14 @@ const Page = ({ history }) => {
 
                 <Route path="/contact">
                     <Contact />
+                </Route>
+
+                <Route path="/blog">
+                    <Blog />
+                </Route>
+
+                <Route path="/sarici2021">
+                    <Admin />
                 </Route>
 
                 <Route path="*">

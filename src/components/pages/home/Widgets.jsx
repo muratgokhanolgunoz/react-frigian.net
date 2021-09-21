@@ -94,7 +94,7 @@ const Widgets = () => {
                                     <input type="text" placeholder={t('home.widgets.center.form.WIDGET_CENTER_FORM_PHONE')} value={phone} onChange={(e) => setPhone(e.target.value)}></input>
                                 </div>
                                 <div className="form-item">
-                                    <button className="template-button template-button-orange">{t('home.widgets.center.form.WIDGET_CENTER_FORM_BUTTON')}</button>
+                                    <button className="template-button template-button-orange">{t('buttons.SEND_REQUEST')}</button>
                                 </div>
                             </form>
                         </div>

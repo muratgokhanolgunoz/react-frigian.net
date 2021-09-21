@@ -20,13 +20,13 @@ const NavigationButtons = (props) => {
                         <Fragment>
                             <Col lg={6}>
                                 <div className="contact-form-item">
-                                    <button className="template-button template-button-dark" onClick={() => context.setDefault()}>{t('register.button.PREVIOUS')}</button>
+                                    <button className="template-button template-button-dark" onClick={() => context.setDefault()}>{t('buttons.PREVIOUS')}</button>
                                 </div>
                             </Col>
 
                             <Col lg={6}>
                                 <div className="contact-form-item">
-                                    <button className="template-button template-button-dark" onClick={() => props.handleFormValidation()}>{t('register.button.NEXT')}</button>
+                                    <button className="template-button template-button-dark" onClick={() => props.handleFormValidation()}>{t('buttons.NEXT')}</button>
                                 </div>
                             </Col>
                         </Fragment>
@@ -36,13 +36,13 @@ const NavigationButtons = (props) => {
                         <Fragment>
                             <Col sm={6}>
                                 <div className="contact-form-item">
-                                    <button type="button" className="template-button template-button-dark" onClick={() => props.handleNavigationButton()}>{t('register.button.PREVIOUS')}</button>
+                                    <button type="button" className="template-button template-button-dark" onClick={() => props.handleNavigationButton()}>{t('buttons.PREVIOUS')}</button>
                                 </div>
                             </Col>
 
                             <Col sm={6}>
                                 <div className="contact-form-item">
-                                    <button type="submit" onClick={() => props.handleSave()} className="template-button template-button-dark">{t('register.button.SAVE')}</button>
+                                    <button type="submit" onClick={() => props.handleSave()} className="template-button template-button-dark">{t('buttons.SAVE')}</button>
                                 </div>
                             </Col>
                         </Fragment>

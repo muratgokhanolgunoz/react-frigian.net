@@ -1,6 +1,24 @@
 {
-    "general": {
-        "404": "Requested Page Not Found"
+    "template_message": {
+        "error": {
+            "NOT_FOUND": "Requested Page Not Found",
+            "BLOG_SERVER_ERROR": "The articles could not be listed due to a problem on the server side"
+        },
+        "warning": {
+            "BLOG_NOT_FOUND": "No article found for the language you selected"
+        },
+        "info": {
+            "WAIT_RESPONSE": "Waiting for response from server ..."
+        }
+    },
+    "buttons": {
+        "NEXT": "Next",
+        "PREVIOUS": "Previous",
+        "SAVE": "Save",
+        "CHECK_PACKAGES": "Check Packages",
+        "SEND_REQUEST": "Send Request",
+        "SEND_MESSAGE": "Send Message",
+        "READ_MORE": "Read More . . ."
     },
     "navbar": {
         "NAVBAR_ITEM_HOME": "Home",
@@ -15,8 +33,7 @@
     "home": {
         "banner": {
             "BANNER_HEADER": "Logistics Digital Platform",
-            "BANNER_CONTENT": "New Generation Logistics Management System Integrated Freights Market",
-            "BANNER_BUTTON": "Check Packages"
+            "BANNER_CONTENT": "New Generation Logistics Management System Integrated Freights Market"
         },
         "widgets": {
             "left": {
@@ -28,8 +45,7 @@
                 "form": {
                     "WIDGET_CENTER_FORM_NAME": "Name Surname",
                     "WIDGET_CENTER_FORM_PHONE": "Phone",
-                    "WIDGET_CENTER_FORM_EMAIL": "eMail",
-                    "WIDGET_CENTER_FORM_BUTTON": "Send Request"
+                    "WIDGET_CENTER_FORM_EMAIL": "eMail"
                 }
             },
             "right": {
@@ -283,11 +299,6 @@
         "banner": {
             "TITLE": "Registration"
         },
-        "button": {
-            "NEXT": "Next",
-            "PREVIOUS": "Previous",
-            "SAVE": "Save"
-        },
         "companyForm": {
             "COUNTRY": "Country",
             "TAX_NO": "Tax Number",
@@ -390,6 +401,18 @@
             }
         ]
     },
+    "blog": {
+        "banner": {
+            "BLOG_BANNER_TITLE": "Our Articles"
+        },
+        "body": {
+            "BLOG_SECTION_ITEMS_AUTHOR_PREFIX": "by"            
+        }, 
+        "error": {
+            "BLOG_SECTION_ERROR_BLOG_NOT_FOUND": "The article was not found. Please check the link and try again",
+            "BLOG_SECTION_WARNING_BLOG_NOT_FOUIND": "No article found for the language you selected."
+        }
+    },
     "contact": {
         "banner": {
             "CONTACT_BANNER_TITLE": "Contact Us"
@@ -405,8 +428,7 @@
             "CONTACT_FORM_INPUT_SUBJECT_PLACEHOLDER": "",
             "CONTACT_FORM_TEXTAREA_MESSAGE_LABEL": "Message",
             "CONTACT_FORM_TEXTAREA_MESSAGE_PLACEHOLDER": "Write your notes or questions here",
-            "CONTACT_FORM_INPUT_CAPTCHA_PLACEHOLDER": "Enter captcha",
-            "CONTACT_FORM_BUTTON_LABEL": "Send Message"
+            "CONTACT_FORM_INPUT_CAPTCHA_PLACEHOLDER": "Enter captcha"
         },
         "address": {
             "CONTACT_ADDRESS_COMPANY_NAME_LABEL": "Company Name",

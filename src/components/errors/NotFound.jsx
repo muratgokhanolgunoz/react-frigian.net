@@ -14,7 +14,7 @@ const NotFound = () => {
     return (
         <div style={styles}>
             <h1>404</h1>
-            <h3>{t('general.404')}</h3>            
+            <h3>{t('template_message.error.NOT_FOUND')}</h3>            
         </div>
     )
 }

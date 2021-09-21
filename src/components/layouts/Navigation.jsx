@@ -35,7 +35,7 @@ const Navigation = (props) => {
                             <Link to="/pricing">{t('navbar.NAVBAR_ITEM_PRICING')}</Link>
                             <Link to="/faq">{t('navbar.NAVBAR_ITEM_FAQ')}</Link>
                             <Link to="/contact">{t('navbar.NAVBAR_ITEM_CONTACT')}</Link>
-                            <Link to="/tr/blg/" target="_blank">{t('navbar.NAVBAR_ITEM_BLOG')}</Link>
+                            <Link to="/blog">{t('navbar.NAVBAR_ITEM_BLOG')}</Link>
                             <a href="https://frigian.whereby.com/frigian" target="_blank" rel="noreferrer">{t('navbar.NAVBAR_ITEM_MEETING_ROOM')}</a>
                         </Nav>
                         <Nav>
