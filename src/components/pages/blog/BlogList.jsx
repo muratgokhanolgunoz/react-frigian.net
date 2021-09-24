@@ -36,13 +36,19 @@ const BlogList = (props) => {
                 if (response.data.result.length === 0) {
                     setStatusOfResponseMessage(1)
                 } else {
-                    setBlogs(response.data.result)
+                    setBlogs(sortArray(response.data.result))
                 }
             })
             .catch(() => {
                 setStatusOfResponseMessage(1)
                 console.warn("API Error: Unable to load blog section")
             })
+    }
+
+    const sortArray = (_array) => {
+        return _array.sort((i, j) => {
+            return i.BLOG_SECTION_ITEMS_ID - j.BLOG_SECTION_ITEMS_ID
+        })
     }
 
     return (

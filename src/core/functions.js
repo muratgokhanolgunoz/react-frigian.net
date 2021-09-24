@@ -32,7 +32,7 @@ export const makeRandomCharacter = (_length) => {
 export const showToast = (_position, _text, _type) => {
     toast(_text, {
         position: _position,
-        autoClose: 3000,
+        autoClose: 10000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,

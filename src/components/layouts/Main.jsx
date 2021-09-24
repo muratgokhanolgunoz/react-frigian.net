@@ -19,6 +19,7 @@ import { Switch, Route, withRouter } from "react-router-dom"
 
 import '../../assets/css/style.css'
 import "react-toastify/dist/ReactToastify.css"
+import EventPopup from './popups/EventPopup'
 
 const Page = ({ history }) => {
 
@@ -67,9 +68,11 @@ const Page = ({ history }) => {
 
     return (
         <div id="main">
+            <EventPopup />
+
             <Navigation funcSetCookie={setCookie} />
             <CookieBanner funcSetCookie={setCookie} funcGetCookie={getCookie} />
-
+            
             <Switch>
                 <Route exact path="/">
                     <Home />
@@ -95,7 +98,7 @@ const Page = ({ history }) => {
                     <Contact />
                 </Route>
 
-                <Route path="/blog">
+                <Route path="/blog">                
                     <Blog />
                 </Route>
 

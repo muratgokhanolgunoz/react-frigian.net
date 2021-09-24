@@ -11,11 +11,15 @@ class BlogService extends Services {
     }
 
     addBlog(_language, _data) {
-        return axios.post(this.API_URL + "fnetBlog/" + _language + "/add", _data)
+        return axios.post(this.API_URL + "fnetBlog/add/" + _language, _data)
     }
 
     deleteBlog(_language, _data) {
-        return axios.post(this.API_URL + "fnetBlog/" + _language + "/delete", _data)
+        return axios.post(this.API_URL + "fnetBlog/delete/" + _language, _data)
+    }
+
+    updateBlog(_language, _data) {
+        return axios.post(this.API_URL + "fnetBlog/update/" + _language, _data)
     }
 }
 export default BlogService

@@ -3,18 +3,25 @@
 /* eslint-disable no-restricted-globals */
 import React, { Fragment, useState, useEffect } from 'react'
 import BlogService from '../../../services/BlogService'
+import { useTranslation } from 'react-i18next'
 import { showToast } from '../../../core/functions'
 import { ToastContainer } from 'react-toastify'
 import { Container, Row, Col, Table, Button, ButtonGroup } from 'react-bootstrap'
 
+let formError = false
+
 const Blog = () => {
     let blogService = new BlogService()
+    const { t } = useTranslation('translation')
 
     const [language, setLanguage] = useState("tr")
     const [blogs, setBlogs] = useState([])
+    const [blogId, setBlogId] = useState("")
     const [title, setTitle] = useState("")
     const [thumbnail, setThumbnail] = useState("")
+    const [lastThumbnail, setLastThumbnail] = useState("")
     const [photo, setPhoto] = useState("")
+    const [lastPhoto, setLastPhoto] = useState("")
     const [summary, setSummary] = useState("")
     const [article, setArticle] = useState("")
     const [author, setAuthor] = useState("")
@@ -28,38 +35,98 @@ const Blog = () => {
         blogService.getBlogs(language).then((response) => setBlogs(response.data.result))
     }
 
-    const addBlog = () => {
-        if (title === "" || thumbnail === "" || thumbnail.size > 5242880 || photo === "" || photo.size > 5242880 || summary === "" || article === "" || author === "") {
-            showToast("bottom-right", "Please fill in all fields", "error")
+    const clearForm = () => {
+        setBlogId("")
+        setTitle("")
+        setThumbnail("")
+        setPhoto("")
+        setSummary("")
+        setArticle("")
+        setAuthor("")
+        setLastThumbnail("")
+        setLastPhoto("")
+    }
+
+    const addOrUpdateBlog = (_status = 0) => {
+        // _status == 0 => Add, 1 => Edit
+
+        const payload = new FormData()
+        payload.append('title', title)
+        payload.append('thumbnail', thumbnail)
+        payload.append('photo', photo)
+        payload.append('summary', summary)
+        payload.append('article', article)
+        payload.append('author', author)
+
+        if (_status === 0) {
+            if (title === "" ||
+                thumbnail === "" ||
+                thumbnail.size > 5242880 ||
+                photo === "" ||
+                photo.size > 5242880 ||
+                summary === "" ||
+                article === "" ||
+                author === "") {
+                formError = true
+                showToast("bottom-right", "Please fill in all fields", "error")
+            } if (thumbnail !== "" && thumbnail.size > 5242880) {
+                formError = true
+                showToast("bottom-right", t('template.notification.warnings.FILE_SIZE'), "error")
+            } if (photo !== "" && photo.size > 5242880) {
+                formError = true
+                showToast("bottom-right", t('template.notification.warnings.FILE_SIZE'), "error")
+            } if (!formError) {
+                blogService.addBlog(language, payload)
+                    .then((response) => {
+                        response.data.result === true
+                            ?
+                            showToast("bottom-right", "Success", "success")
+                            :
+                            showToast("bottom-right", "Failed", "error")
+                    })
+                    .then(() => {
+                        clearForm()
+                        listBlogs()
+                    })
+                    .catch(() => (
+                        showToast("bottom-right", "Server error", "error")
+                    ))
+            }
         } else {
-            const payload = new FormData()
-            payload.append('title', title)
-            payload.append('thumbnail', thumbnail)
-            payload.append('photo', photo)
-            payload.append('summary', summary)
-            payload.append('article', article)
-            payload.append('author', author)
+            if (title === "" ||
+                summary === "" ||
+                article === "" ||
+                author === "") {
+                formError = true
+                showToast("bottom-right", "Please fill in all fields", "error")
+            } if (thumbnail !== "" || photo !== "") {
+                if (thumbnail !== "" && thumbnail.size > 5242880) {
+                    formError = true
+                    showToast("bottom-right", t('template.notification.warnings.FILE_SIZE'), "error")
+                }
 
-            blogService.addBlog(language, payload)
-                .then((response) => {
-                    response.data.result === true
-                        ?
-                        showToast("bottom-right", "Success", "success")
-                        :
-                        showToast("bottom-right", "Failed", "error")
-
-                    setTitle("")
-                    setThumbnail("")
-                    setPhoto("")
-                    setSummary("")
-                    setArticle("")
-                    setAuthor("")
-                })
-                .catch(() => (
-                    showToast("bottom-right", "Server error", "error")
-                ))
-
-            setTimeout(function () { window.location.reload() }, 2000);
+                if (photo !== "" && photo.size > 5242880) {
+                    formError = true
+                    showToast("bottom-right", t('template.notification.warnings.FILE_SIZE'), "error")
+                }
+            } if (!formError) {
+                payload.append('id', blogId)
+                blogService.updateBlog(language, payload)
+                    .then((response) => {
+                        response.data.result === true
+                            ?
+                            showToast("bottom-right", "Success", "success")
+                            :
+                            showToast("bottom-right", "Failed", "error")
+                    })
+                    .then(() => {
+                        clearForm()
+                        listBlogs()
+                    })
+                    .catch(() => (
+                        showToast("bottom-right", "Server error", "error")
+                    ))
+            }
         }
     }
 
@@ -76,9 +143,28 @@ const Blog = () => {
                         showToast("bottom-right", "An error occured", "error")
                     }
                 })
+                .then(() => {
+                    listBlogs()
+                })
                 .catch(() => showToast("bottom-right", "Server error", "error"))
-            listBlogs()
         }
+    }
+
+    const getEditBlog = (_id) => {
+        blogService.getSelectedBlog(language, _id)
+            .then((response) => {
+                setBlogId(response.data.result.BLOG_SECTION_ITEMS_ID)
+                setTitle(response.data.result.BLOG_SECTION_ITEMS_TITLE)
+                setSummary(response.data.result.BLOG_SECTION_ITEMS_SUMMARY)
+                setArticle(response.data.result.BLOG_SECTION_ITEMS_ARTICLE)
+                setAuthor(response.data.result.BLOG_SECTION_ITEMS_AUTHOR)
+                setLastThumbnail(response.data.result.BLOG_SECTION_ITEMS_THUMBNAIL)
+                setLastPhoto(response.data.result.BLOG_SECTION_ITEMS_PHOTO)
+            })
+            .catch(() => {
+                console.warn("API Error: Unable to load blog section")
+                showToast("bottom-right", "Server Error", "error")
+            })
     }
 
     return (
@@ -119,7 +205,11 @@ const Blog = () => {
                 <br /><br />
 
                 <Row>
-                    <Col lg={4} sm={12} style={{ backgroundColor: "#f5f5f5", padding: "25px" }}>
+                    <Col lg={5} sm={12} style={{ backgroundColor: "#f5f5f5", padding: "25px" }}>
+                        <Col lg={12}>   
+                            <Button onClick={() => clearForm()} style={{ float: "right" }}>Clear Form</Button>
+                        </Col>
+                        <br /><br />
                         <Col xs={12}>
                             <label><b>Title : </b></label>
                             <input
@@ -134,6 +224,7 @@ const Blog = () => {
                         <br />
                         <Col xs={12}>
                             <label><b>Thumbnail : </b></label>
+
                             <input
                                 id="input-upload-thumbnail"
                                 type="file"
@@ -142,8 +233,17 @@ const Blog = () => {
                                 onChange={(e) => setThumbnail(e.target.files[0])}
                                 className="form-control"
                             />
-                            <label>File Extension : <b>. jpg - . png</b></label>
+                            <label>File Type : <b>png - jpg - jpeg</b></label>
+                            &emsp;
+                            <label>Maximum Size : <b>5MB</b></label>
                         </Col>
+                        {
+                            lastThumbnail !== "" && (
+                                <Col>
+                                    <img src={lastThumbnail} alt="" style={{ maxWidth: "250px" }} />
+                                </Col>
+                            )
+                        }
                         <br />
                         <Col xs={12}>
                             <label><b>Photo : </b></label>
@@ -155,33 +255,50 @@ const Blog = () => {
                                 onChange={(e) => setPhoto(e.target.files[0])}
                                 className="form-control"
                             />
-                            <label>File Extension : <b>. jpg - . png</b></label>
+                            <label>File Type : <b>png - jpg - jpeg</b></label>
+                            &emsp;
+                            <label>Maximum Size : <b>5MB</b></label>
                         </Col>
+                        {
+                            lastPhoto !== "" && (
+                                <Col>
+                                    <img src={lastPhoto} alt="" style={{ maxWidth: "600px" }} />
+                                </Col>
+                            )
+                        }
                         <br />
                         <Col xs={12}>
-                            <label><b>Summary : </b></label>
+                            <label>
+                                <b>
+                                    Summary
+                                    <small> [Max Length 350 Characters] : </small>
+                                </b>
+                            </label>
                             <textarea
                                 id="textarea-summary"
                                 name="summary"
                                 value={summary}
                                 className="form-control"
-                                rows="10"
+                                rows="7"
+                                maxLength="350"
                                 onChange={(e) => setSummary(e.target.value)}
                             ></textarea>
                         </Col>
                         <br />
                         <Col xs={12}>
-                            <label><b>Article : </b></label>
-                            <br />
                             <label>
-                                <b>Supported Tags :</b> &emsp; [ br ] [ b ] [ u ] [ em ] [ mark ] [ h1 ] [ h2 ] [ h3 ] [ h4 ] [ h5 ] [ h6 ] [ pre ] [ small ] [ big ]
+                                <b>
+                                    Article
+                                    <small> [ Supported Tags : br -  b -  u -  em -  mark -  h1 -  h2 -  h3 -  h4 -  h5 -  h6 -  pre -  small -  big ] : </small>
+                                </b>
                             </label>
+
                             <textarea
                                 id="textarea-article"
                                 name="article"
                                 value={article}
                                 className="form-control"
-                                rows="10"
+                                rows="15"
                                 onChange={(e) => setArticle(e.target.value)}
                             ></textarea>
                         </Col>
@@ -199,19 +316,26 @@ const Blog = () => {
                         </Col>
                         <br />
                         <Col xs={12}>
-                            <Button onClick={() => addBlog()}>Save</Button>
+                            <Button onClick={() => addOrUpdateBlog(blogId !== "" ? 1 : 0)}>
+                                {
+                                    blogId !== ""
+                                        ? "Edit"
+                                        : "Save"
+                                }
+                            </Button>
                         </Col>
                     </Col>
-                    <Col lg={8} sm={12}>
+                    <Col lg={7} sm={12}>
                         <Table striped responsive>
                             <thead className="table-dark">
                                 <tr>
-                                    <th>#</th>                                    
+                                    <th>#</th>
                                     <th>Author</th>
                                     <th>Title</th>
                                     <th>Date</th>
                                     <th>Share</th>
-                                    <th>Delete</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -227,6 +351,9 @@ const Blog = () => {
                                             </td>
                                             <td>
                                                 <span className="text-primary" style={{ textDecoration: "underline", cursor: "pointer" }} onClick={() => deleteBlog(blogItem.BLOG_SECTION_ITEMS_ID)}>Delete</span>
+                                            </td>
+                                            <td>
+                                                <span className="text-primary" style={{ textDecoration: "underline", cursor: "pointer" }} onClick={() => getEditBlog(index)}>Edit</span>
                                             </td>
                                         </tr>
                                     ))

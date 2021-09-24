@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next'
 import queryString from 'query-string'
 import BlogService from '../../../services/BlogService'
 import SectionBanner from '../../layouts/SectionBanner'
+import { showToast } from '../../../core/functions'
+import { ToastContainer } from 'react-toastify'
 
 const BlogDetail = React.lazy(() => import('./BlogDetail'))
 const BlogList = React.lazy(() => import('./BlogList'))
@@ -17,7 +19,7 @@ const languages = {
 }
 
 const Index = () => {
-    
+
     const [pageStatus, setPageStatus] = useState(0)
     const [selectedBlog, setSelectedBlog] = useState({})
 
@@ -39,11 +41,11 @@ const Index = () => {
                     setSelectedBlog(response.data.result)
                 })
                 .then(() => {
-                    i18n.changeLanguage(urlParams.language)
                     incrasePageStatus()
                 })
                 .catch(() => {
                     i18n.changeLanguage(urlParams.language)
+                    showToast("bottom-right", t('template_message.warning.BLOG_NOT_FOUND'), "error")
                     console.warn("API Error: Unable to load blog section")
                 })
         }
@@ -78,6 +80,8 @@ const Index = () => {
                         </Suspense>
                     )
             }
+
+            <ToastContainer />
         </div>
     )
 }
