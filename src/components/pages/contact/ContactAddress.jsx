@@ -29,11 +29,6 @@ const ContactAddress = () => {
                 <h5><b>{t('contact.address.CONTACT_ADDRESS_PHONE_LABEL')}</b></h5>
                 <a href="tel:+908508112480">+90 (850) 811 24 80</a>
             </div>
-
-            <div className="contact-address-row">
-                <h5><b>{t('contact.address.CONTACT_ADDRESS_EMAIL_LABEL')}</b></h5>
-                <a href="mailto:info@frigian.com">info@frigian.com</a>
-            </div>
         </div>
     )
 }

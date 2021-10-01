@@ -10,7 +10,7 @@ const BlogItem = (props) => {
 
     return (
         <Fragment>
-            <Col className="blog-box" xl={4} md={6}>
+            <Col className="blog-box" xl={4} md={6} onClick={() => props.setBlog(props.blog)}>
                 <div className="blog-box-item">
                     <Image className="blog-box-image" src={props.blog.BLOG_SECTION_ITEMS_THUMBNAIL} fluid />
                     <span className="blog-box-item-author">
@@ -26,7 +26,7 @@ const BlogItem = (props) => {
                     </span>
                     <h6>{props.blog.BLOG_SECTION_ITEMS_TITLE}</h6>
                     <p>{props.blog.BLOG_SECTION_ITEMS_SUMMARY}</p>
-                    <a className="template-button template-button-orange-variant-2 template-button-box-shadow" onClick={() => props.setBlog(props.blog)}>{t('buttons.READ_MORE')}</a>
+                    {/* <a className="template-button template-button-orange-variant-2 template-button-box-shadow" onClick={() => props.setBlog(props.blog)}>{t('buttons.READ_MORE')}</a> */}
                 </div>
             </Col>
         </Fragment>

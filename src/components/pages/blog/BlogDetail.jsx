@@ -23,6 +23,8 @@ const BlogDetail = (props) => {
             findElements(objectSelectedBlog.BLOG_SECTION_ITEMS_ARTICLE, e)
         ))
         showArticle(objectSelectedBlog.BLOG_SECTION_ITEMS_ARTICLE, sortArray(arrayFindElements))
+
+        window.scrollTo(0, 350)
     }, [])
 
     const tagIndexOf = (_article, _tag, _index) => {
@@ -119,24 +121,21 @@ const BlogDetail = (props) => {
         <div id="blog-detail">
             <Container>
                 <Row>
-                    <Col lg={3} md={6}>
-                        <button id="button-blog-detail" className="template-button template-button-dark" onClick={() => funcSetIncrasePageStatus()}>
-                            <VscChevronLeft className="template-button-icon" />&nbsp;{t('buttons.PREVIOUS')}
-                        </button>
-                    </Col>
-                </Row>
-                <br />
-                <Row>
                     <Col className="modal-blog-preview-body" lg={12}>
                         <Row>
                             <Image className="modal-blog-preview-body-image" src={objectSelectedBlog.BLOG_SECTION_ITEMS_PHOTO} alt="" fluid />
                             <Image className="modal-blog-preview-body-thumbnail" src={objectSelectedBlog.BLOG_SECTION_ITEMS_THUMBNAIL} alt="" fluid />
+                            <span className="modal-blog-preview-author"><small>{objectSelectedBlog.BLOG_SECTION_ITEMS_DATE !== undefined ? objectSelectedBlog.BLOG_SECTION_ITEMS_DATE.substr(0, 10) : null} | {objectSelectedBlog.BLOG_SECTION_ITEMS_AUTHOR}</small></span>
                         </Row>
-                        <Row>
-                            <Col md={12} style={{ marginTop: "-20px" }}>
-                                <p style={{ textAlign: "right" }}><small>{objectSelectedBlog.BLOG_SECTION_ITEMS_DATE !== undefined ? objectSelectedBlog.BLOG_SECTION_ITEMS_DATE.substr(0, 10) : null} | {objectSelectedBlog.BLOG_SECTION_ITEMS_AUTHOR}</small></p>
+                        <Row style={{ marginTop: "-60px" }}>
+                            <Col lg={3} md={6}>
+                                <button id="button-blog-detail" className="template-button template-button-gray" onClick={() => funcSetIncrasePageStatus()}>
+                                    <VscChevronLeft className="template-button-icon" />&nbsp;{t('buttons.PREVIOUS')}
+                                </button>
                             </Col>
-                            <Col md={12} style={{ marginTop: "-40px" }}>
+                        </Row>
+                        <Row>                            
+                            <Col md={12}>
                                 <h1>{objectSelectedBlog.BLOG_SECTION_ITEMS_TITLE}</h1>
                             </Col>
                         </Row>

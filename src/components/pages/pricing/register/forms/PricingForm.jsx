@@ -48,6 +48,7 @@ const PricingForm = () => {
     useEffect(() => {
         context.calculateYearlyPrice()
         context.calculateMonthlyPrice()
+        window.scrollTo(0, 350)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
