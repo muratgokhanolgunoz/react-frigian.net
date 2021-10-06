@@ -15,7 +15,7 @@ const CompanyForm = () => {
 
     useEffect(() => {
         getCountryInfo()
-        window.scrollTo(0, 350)
+        window.scrollTo(0, 250)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

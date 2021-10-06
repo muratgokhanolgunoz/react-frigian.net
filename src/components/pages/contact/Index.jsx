@@ -6,7 +6,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ContactAddress from './ContactAddress'
 
 const Index = () => {
-
     const {t} = useTranslation('translation')
 
     return (

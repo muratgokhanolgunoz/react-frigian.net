@@ -271,15 +271,15 @@
             },
             "startup": {
                 "TITLE": "Yeni Başlayan",
-                "SUBTITLE": "€9,99 Kullanıcı/Ay",
+                "SUBTITLE": "$11,49 Kullanıcı/Ay",
                 "BUTTON": "Hemen Başla",
-                "FOOTER_ROW_1": "4 kullanıcı paketi aylık €39,96",
+                "FOOTER_ROW_1": "4 kullanıcı paketi aylık $45.96",
                 "FOOTER_ROW_2": "15GB depolama",
                 "FOOTER_ROW_3": "Pazaryerinde 100 rota"
             },
             "business": {
                 "TITLE": "Kobi",
-                "SUBTITLE": "€17,99 Kullanıcı/Ay",
+                "SUBTITLE": "$17,70 Kullanıcı/Ay",
                 "BUTTON": "Hemen Başla",
                 "FOOTER_ROW_1": "Maksimum 30 kullanıcı",
                 "FOOTER_ROW_2": "100GB depolama",

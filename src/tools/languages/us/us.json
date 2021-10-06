@@ -271,15 +271,15 @@
             },
             "startup": {
                 "TITLE": "Startup",
-                "SUBTITLE": "€9,99 User/Month",
+                "SUBTITLE": "$11,49 User/Month",
                 "BUTTON": "Register Now",
-                "FOOTER_ROW_1": "4 User Package Monthly €39,96",
+                "FOOTER_ROW_1": "4 User Package Monthly $45,96",
                 "FOOTER_ROW_2": "15GB Storage",
                 "FOOTER_ROW_3": "100 Route in Marketplace"
             },
             "business": {
                 "TITLE": "Business",
-                "SUBTITLE": "€17,99 User/Month",
+                "SUBTITLE": "$17,70 User/Month",
                 "BUTTON": "Register Now",
                 "FOOTER_ROW_1": "Max 30 User",
                 "FOOTER_ROW_2": "100GB Storage",

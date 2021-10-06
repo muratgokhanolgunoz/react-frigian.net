@@ -8,6 +8,7 @@ const Index = () => {
     const context = useContext(Context)
     useEffect(() => {
         context.setDefault()        
+        window.scrollTo(0, 250)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

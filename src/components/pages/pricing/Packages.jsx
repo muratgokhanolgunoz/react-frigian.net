@@ -39,9 +39,11 @@ const Packages = () => {
                         title={t('pricing.title.TITLE')}
                         subtitle={t('pricing.title.SUBTITLE_1')}
                     />
+
+                    <p id="pricing-subitle-2">{t('pricing.title.SUBTITLE_2')}</p>
                 </Row>
                 <Row>
-                    <p id="pricing-subitle-2">{t('pricing.title.SUBTITLE_2')}</p>
+
                 </Row>
                 <Row>
                     <Col className="pricing-column" lg={4} md={6}>
@@ -88,7 +90,7 @@ const Packages = () => {
                                 <p>{t('pricing.items.startup.FOOTER_ROW_1')}</p>
                                 <p>{t('pricing.items.startup.FOOTER_ROW_2')}</p>
                                 <p>{t('pricing.items.startup.FOOTER_ROW_3')}</p>
-                                <button className="template-button template-button-danger" onClick={() => setSelectedPackage(1, 4, 9.99)}>{t('pricing.items.startup.BUTTON')}</button>
+                                <button className="template-button template-button-danger" onClick={() => setSelectedPackage(1, 4, 11.49)}>{t('pricing.items.startup.BUTTON')}</button>
                             </div>
                         </div>
                     </Col>
@@ -98,7 +100,7 @@ const Packages = () => {
                             <div className="pricing-item-header" style={{ backgroundColor: "var(--color-6)", border: "3px solid var(--color-6)" }}>
                                 <h4>{t('pricing.items.business.TITLE')}</h4>
                                 <span id="span-best-value">{t('pricing.items.BEST_PRICE')}</span>
-                            </div>                            
+                            </div>
                             <div className="pricing-item-body" style={{ borderWidth: "3px 3px .1px 3px", borderStyle: "solid", borderColor: "var(--color-6)" }}>
                                 <p>{t('pricing.items.business.SUBTITLE')}</p>
                                 <div className="pricing-feature-row">
@@ -138,7 +140,7 @@ const Packages = () => {
                                 <p>{t('pricing.items.business.FOOTER_ROW_1')}</p>
                                 <p>{t('pricing.items.business.FOOTER_ROW_2')}</p>
                                 <p>{t('pricing.items.business.FOOTER_ROW_3')}</p>
-                                <button className="template-button template-button-danger" onClick={() => setSelectedPackage(2, 5, 17.99)}>{t('pricing.items.business.BUTTON')}</button>
+                                <button className="template-button template-button-danger" onClick={() => setSelectedPackage(2, 5, 17.70)}>{t('pricing.items.business.BUTTON')}</button>
                             </div>
                         </div>
                     </Col>

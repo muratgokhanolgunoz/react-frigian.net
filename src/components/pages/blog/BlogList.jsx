@@ -20,10 +20,6 @@ const BlogList = (props) => {
     const { i18n } = useTranslation('translation')
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
-
-    useEffect(() => {
         setStatusOfResponseMessage(0)
         setBlogs([])
         getBlogs(i18n.language.toLowerCase())

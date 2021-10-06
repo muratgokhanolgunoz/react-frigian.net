@@ -41,8 +41,10 @@ const Page = ({ history }) => {
         homeServices.userLog()
 
         // Listen to history from browser. Set scrool position to top when change the page.
-        const resetScroolPosition = history.listen(() => {
-            window.scrollTo(0, 0)
+        const resetScroolPosition = history.listen((_history) => {
+            if (_history !== "/") {
+                window.scrollTo(0, 250)
+            }
         });
         return () => {
             resetScroolPosition()
@@ -72,7 +74,7 @@ const Page = ({ history }) => {
 
             <Navigation funcSetCookie={setCookie} />
             <CookieBanner funcSetCookie={setCookie} funcGetCookie={getCookie} />
-            
+
             <Switch>
                 <Route exact path="/">
                     <Home />
@@ -98,7 +100,7 @@ const Page = ({ history }) => {
                     <Contact />
                 </Route>
 
-                <Route path="/blog">                
+                <Route path="/blog">
                     <Blog />
                 </Route>
 

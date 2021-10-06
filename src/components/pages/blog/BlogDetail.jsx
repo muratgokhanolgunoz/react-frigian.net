@@ -24,7 +24,7 @@ const BlogDetail = (props) => {
         ))
         showArticle(objectSelectedBlog.BLOG_SECTION_ITEMS_ARTICLE, sortArray(arrayFindElements))
 
-        window.scrollTo(0, 350)
+        window.scrollTo(0, 250)
     }, [])
 
     const tagIndexOf = (_article, _tag, _index) => {

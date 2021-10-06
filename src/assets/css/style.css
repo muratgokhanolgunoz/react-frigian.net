@@ -13,6 +13,7 @@
   --color-6: #52825b;
   --color-7: #825252;
   --color-8: #8b8b8b;
+  --color-9: #2c6fad;
 }
 
 * {
@@ -30,6 +31,28 @@
 ::selection {
   background: var(--color-2);
   color: #fff;
+}
+
+
+/* ========== CUSTOM SCROLLBAR STYLES ========== */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 body {
@@ -261,14 +284,14 @@ body {
 /* ========== SECTION BANNER STYLES ========== */
 
 #section-banner {
-  height: 450px;
+  height: 250px;
+  margin-top: 100px;
 }
 
 #section-banner-text {
   width: 100%;
-  padding: 30px;
   text-align: center;
-  top: 275px;
+  top: 235px;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
@@ -277,12 +300,16 @@ body {
 
 #section-banner-text h1 {
   font-family: var(--font-family-2);
-  font-size: 4em;
+  font-size: 3em;
+}
+
+#section-banner-text ul {
+  text-align: center;
 }
 
 #section-banner-text ul li {
   display: inline-block;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 0 5px;
 }
 
@@ -290,6 +317,7 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: var(--color-1);
+  margin-left: -30px;
 }
 
 #section-banner-text ul li span {
@@ -806,7 +834,7 @@ body {
 .services-row .services-icon {
   padding-right: 15px;
   font-size: 2.1em;
-  color: #2c6fad;
+  color: var(--color-9);
 }
 
 .services-item,
@@ -819,7 +847,7 @@ body {
 }
 
 .services-item-title {
-  background-color: var(--color-1);
+  background-color: var(--color-9);
   color: var(--color-3);
 }
 
@@ -827,12 +855,12 @@ body {
 
 #pricing-subitle-2 {
   color: rgb(255, 0, 0);
-  font-size: 1.7em;
-  font-weight: bold;
+  font-size: 1.5em;
+  font-weight: lighter;
   width: 100%;
   text-align: center;
   font-family: var(--font-family-2);
-  margin-bottom: 50px;
+  margin-top: -15px;
 }
 
 .pricing-item {
@@ -907,7 +935,7 @@ body {
 .pricing-icon {
   padding-right: 15px;
   font-size: 3.2em;
-  color: #2c6fad;
+  color: var(--color-9);
 }
 
 .pricing-no-feature {

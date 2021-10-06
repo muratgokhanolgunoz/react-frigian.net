@@ -5,8 +5,7 @@ import FaqRow from './FaqRow'
 import { Container, Row, Col } from 'react-bootstrap'
 
 const Index = () => {
-
-    const {t} = useTranslation('translation')
+    const { t } = useTranslation('translation')
 
     return (
         <div id="faq">
@@ -21,7 +20,7 @@ const Index = () => {
                     <Col lg={12}>
                         {
                             t('faq.items', { returnObjects: true }).map((object, index) => (
-                               <FaqRow key={index} item={object} />
+                                <FaqRow key={index} item={object} />
                             ))
                         }
                     </Col>

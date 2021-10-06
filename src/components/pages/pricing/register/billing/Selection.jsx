@@ -34,7 +34,7 @@ const Selection = () => {
                                 onChange={(e) => handleChange(e.target.value)}
                             />
                             <span>
-                                &emsp;<b>[ €{' '}{context.state.packageYearlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
+                                &emsp;<b>[ ${' '}{context.state.packageYearlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
                             </span>
                         </div>
                         <div className="selection-item">
@@ -48,7 +48,7 @@ const Selection = () => {
                                 onChange={(e) => handleChange(e.target.value)}
                             />
                             <span>
-                                &emsp;<b>[ €{' '}{context.state.packageMonthlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
+                                &emsp;<b>[ ${' '}{context.state.packageMonthlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
                             </span>
                         </div>
                     </div>
