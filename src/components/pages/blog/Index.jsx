@@ -24,10 +24,10 @@ const Index = () => {
     const [selectedBlog, setSelectedBlog] = useState({})
 
     const { t, i18n } = useTranslation('translation')
-    
+
     useEffect(() => {
         urlParams = queryString.parse(location.search)
-        showBlogFromUrl()
+        showBlogFromUrl()        
     }, [])
 
     const incrasePageStatus = () => {

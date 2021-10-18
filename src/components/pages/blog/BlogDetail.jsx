@@ -134,7 +134,7 @@ const BlogDetail = (props) => {
                                 </button>
                             </Col>
                         </Row>
-                        <Row>                            
+                        <Row>
                             <Col md={12}>
                                 <h1>{objectSelectedBlog.BLOG_SECTION_ITEMS_TITLE}</h1>
                             </Col>

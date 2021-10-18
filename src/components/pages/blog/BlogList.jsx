@@ -20,10 +20,14 @@ const BlogList = (props) => {
     const { i18n } = useTranslation('translation')
 
     useEffect(() => {
+        window.scrollTo(0, 250);
+    }, []);
+
+    useEffect(() => {
         setStatusOfResponseMessage(0)
         setBlogs([])
         getBlogs(i18n.language.toLowerCase())
-    }, [i18n.language])
+    }, [i18n.language])    
 
     const sendBlogInformation = (_blog) => {
         props.funcSetSelectedBlog(_blog)

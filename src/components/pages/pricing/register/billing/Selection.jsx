@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next'
 import { Form } from 'react-bootstrap'
 import Context from '../../../../../context/Context'
 
+import { FiDollarSign } from 'react-icons/fi'
+
 const Selection = () => {
 
     const { t } = useTranslation('translation')
@@ -34,7 +36,7 @@ const Selection = () => {
                                 onChange={(e) => handleChange(e.target.value)}
                             />
                             <span>
-                                &emsp;<b>[ ${' '}{context.state.packageYearlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
+                                &emsp;<b>[ <FiDollarSign />{context.state.packageYearlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
                             </span>
                         </div>
                         <div className="selection-item">
@@ -48,7 +50,7 @@ const Selection = () => {
                                 onChange={(e) => handleChange(e.target.value)}
                             />
                             <span>
-                                &emsp;<b>[ ${' '}{context.state.packageMonthlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
+                                &emsp;<b>[ <FiDollarSign />{context.state.packageMonthlyPrice.toString().replace(".", ",")} + {t('register.pricingForm.CAMPAIGN_TAX_ABBREVIATION')} ]</b>
                             </span>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ Today, when the industry 4.0 is spoken, it provides the transparency that the tr
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+  <link rel="stylesheet" href="%PUBLIC_URL%/static/css/bootstrap.min.css"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
 </head>
@@ -25,22 +25,47 @@ Today, when the industry 4.0 is spoken, it provides the transparency that the tr
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
-  <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+  <script src="%PUBLIC_URL%/static/js/react.production.min.js" crossorigin async></script>
 
-  <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="%PUBLIC_URL%/static/js/react-dom.production.min.js" crossorigin async></script>
 
-  <script src="https://unpkg.com/react-bootstrap@next/dist/react-bootstrap.min.js" crossorigin></script>
+  <script src="%PUBLIC_URL%/static/js/react-bootstrap.min.js" crossorigin async></script>
 
-  <script>var Alert = ReactBootstrap.Alert;</script>
+  <!-- <script>var Alert = ReactBootstrap.Alert;</script> -->
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134698799-2"></script>
+  <script src="%PUBLIC_URL%/static/js/google-analytics.js" async></script>
+
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'UA-134698799-2');
   </script>
+
+  <script type="text/javascript">
+    _linkedin_partner_id = "3552036";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+
+  <script type="text/javascript">
+    (function (l) {
+      if (!l) {
+        window.lintrk = function (a, b) { window.lintrk.q.push([a, b]) };
+        window.lintrk.q = []
+      }
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript"; b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt=""
+      src="https://px.ads.linkedin.com/collect/?pid=3552036&fmt=gif" />
+  </noscript>
 </body>
 
 </html>

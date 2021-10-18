@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import SectionBanner from '../../layouts/SectionBanner'
 import FaqRow from './FaqRow'
@@ -6,6 +6,10 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const Index = () => {
     const { t } = useTranslation('translation')
+
+    useEffect(() => {
+        window.scrollTo(0, 250);
+    }, []);
 
     return (
         <div id="faq">

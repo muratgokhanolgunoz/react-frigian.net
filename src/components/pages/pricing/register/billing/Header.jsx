@@ -43,7 +43,7 @@ const Header = () => {
                                 </div>
                             </Col>
 
-                            <Col lg={3} md={12} style={{ paddingLeft: "0"}}>
+                            <Col lg={3} md={12}>
                                 <div id="package-users-input" style={{ backgroundColor: "var(--color-2)", color: "#fff" }}>
                                     <div className="contact-form-item">
                                         <label>{t('register.pricingForm.NUMBER_OF_USERS')}</label>

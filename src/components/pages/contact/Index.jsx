@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import SectionBanner from '../../layouts/SectionBanner'
 import ContactForm from './ContactForm'
@@ -6,7 +6,11 @@ import { Container, Row, Col } from 'react-bootstrap'
 import ContactAddress from './ContactAddress'
 
 const Index = () => {
-    const {t} = useTranslation('translation')
+    const { t } = useTranslation('translation')
+
+    useEffect(() => {
+        window.scrollTo(0, 250);
+    }, []);
 
     return (
         <div id="contact">

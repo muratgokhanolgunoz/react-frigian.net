@@ -271,27 +271,27 @@
             },
             "startup": {
                 "TITLE": "Startup",
-                "SUBTITLE": "$11,49 User/Month",
+                "SUBTITLE": "User/Month",
                 "BUTTON": "Register Now",
-                "FOOTER_ROW_1": "4 User Package Monthly $45,96",
-                "FOOTER_ROW_2": "15GB Storage",
-                "FOOTER_ROW_3": "100 Route in Marketplace"
+                "FOOTER_ROW_1": "User Package Monthly",
+                "FOOTER_ROW_2": "Storage",
+                "FOOTER_ROW_3": "Route in Marketplace"
             },
             "business": {
                 "TITLE": "Business",
-                "SUBTITLE": "$17,70 User/Month",
+                "SUBTITLE": "User/Month",
                 "BUTTON": "Register Now",
-                "FOOTER_ROW_1": "Max 30 User",
-                "FOOTER_ROW_2": "100GB Storage",
-                "FOOTER_ROW_3": "700 Routes in Marketplace"
+                "FOOTER_ROW_1": "Max User",
+                "FOOTER_ROW_2": "Storage",
+                "FOOTER_ROW_3": "Routes in Marketplace"
             },
             "premium": {
                 "TITLE": "Premium",
                 "SUBTITLE": "Negotiable Price",
                 "BUTTON": "Call Now",
-                "FOOTER_ROW_1": "Max 500 User",
-                "FOOTER_ROW_2": "###GB Storage",
-                "FOOTER_ROW_3": "### Routes in Marketplace"
+                "FOOTER_ROW_1": "Max User",
+                "FOOTER_ROW_2": "Storage",
+                "FOOTER_ROW_3": "Routes in Marketplace"
             }
         }
     },

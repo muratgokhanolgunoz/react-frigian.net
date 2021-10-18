@@ -252,7 +252,7 @@ class Provider extends Component {
                         })
                     },
                     calculateYearlyPrice: () => {
-                        let discont = 10 // const %10
+                        let discont = 10
 
                         let total = this.state.packageUsers * this.state.packageUnitPrice * 12
                         let discontedPrice = total - ((total * discont) / 100)

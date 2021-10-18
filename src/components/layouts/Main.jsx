@@ -3,6 +3,7 @@ import Context from '../../context/Context'
 import HomeServices from '../../services/HomeServices'
 import Cookies from 'universal-cookie'
 import { useTranslation } from 'react-i18next'
+// import EventPopup from './popups/EventPopup'
 import Navigation from './Navigation'
 import Home from '../pages/home/Index'
 import CookieBanner from './CookieBanner'
@@ -19,7 +20,6 @@ import { Switch, Route, withRouter } from "react-router-dom"
 
 import '../../assets/css/style.css'
 import "react-toastify/dist/ReactToastify.css"
-import EventPopup from './popups/EventPopup'
 
 const Page = ({ history }) => {
 
@@ -39,16 +39,6 @@ const Page = ({ history }) => {
 
         // save user ip address & userAgent with api
         homeServices.userLog()
-
-        // Listen to history from browser. Set scrool position to top when change the page.
-        const resetScroolPosition = history.listen((_history) => {
-            if (_history !== "/") {
-                window.scrollTo(0, 250)
-            }
-        });
-        return () => {
-            resetScroolPosition()
-        }
 
         // eslint disable for useEffect ( useEffect will be used when the page is first created )
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,7 +60,7 @@ const Page = ({ history }) => {
 
     return (
         <div id="main">
-            <EventPopup />
+            {/* <EventPopup /> */}
 
             <Navigation funcSetCookie={setCookie} />
             <CookieBanner funcSetCookie={setCookie} funcGetCookie={getCookie} />
