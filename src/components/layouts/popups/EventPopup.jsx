@@ -14,7 +14,7 @@ const EventPopup = () => {
                     <VscChromeClose id="close-button" onClick={() => handleToogle(false)} />
                 </Modal.Header>
                 <Modal.Body>
-                    <Image src="./assets/img/event.jpg" alt="" fluid></Image>
+                    <Image src="./assets/img/event-logitrans.png" alt="" fluid></Image>
                 </Modal.Body>
             </Modal>
         </div>

@@ -3,7 +3,7 @@ import Context from '../../context/Context'
 import HomeServices from '../../services/HomeServices'
 import Cookies from 'universal-cookie'
 import { useTranslation } from 'react-i18next'
-// import EventPopup from './popups/EventPopup'
+import EventPopup from './popups/EventPopup'
 import Navigation from './Navigation'
 import Home from '../pages/home/Index'
 import CookieBanner from './CookieBanner'
@@ -60,7 +60,7 @@ const Page = ({ history }) => {
 
     return (
         <div id="main">
-            {/* <EventPopup /> */}
+            <EventPopup />
 
             <Navigation funcSetCookie={setCookie} />
             <CookieBanner funcSetCookie={setCookie} funcGetCookie={getCookie} />
