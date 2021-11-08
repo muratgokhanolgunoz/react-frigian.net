@@ -6,8 +6,9 @@ const SectionBanner = (props) => {
     const styles = {
         background: 'url(./assets/img/frigian-bg.jpg)',
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "center bottom",
         backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
     }
 
     return (

@@ -9,8 +9,9 @@ const Banner = () => {
     const styles = {
         background: 'url(./assets/img/frigian-bg.jpg)',
         backgroundSize: "cover",
-        backgroundPosition: "center center",
-        backgroundRepeat: "no-repeat"
+        backgroundPosition: "center bottom",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed"
     }
 
     return (

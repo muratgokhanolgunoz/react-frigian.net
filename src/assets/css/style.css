@@ -297,13 +297,13 @@ body {
 
 #section-banner {
   height: 250px;
-  margin-top: 100px;
+  margin-top: 70px;
 }
 
 #section-banner-text {
   width: 100%;
   text-align: center;
-  top: 235px;
+  top: 200px;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
@@ -381,6 +381,7 @@ body {
   -webkit-box-shadow: 0px 0px 8px 1px rgba(232, 232, 232, 1);
   -moz-box-shadow: 0px 0px 8px 1px rgba(232, 232, 232, 1);
   box-shadow: 0px 0px 8px 1px rgba(232, 232, 232, 1);
+  padding: 0 !important;
 }
 
 .navbar-toggler {
@@ -402,7 +403,7 @@ body {
 }
 
 .navbar-brand img {
-  max-width: 200px;
+  max-width: 150px;
 }
 
 #navbar-select-language button {
@@ -498,7 +499,7 @@ body {
 /* ========== HOME BANNER SECTION STYLES ========== */
 
 #banner {
-  height: calc(100vh);
+  height: 600px;
   position: relative;
 }
 
@@ -506,7 +507,7 @@ body {
   width: 100%;
   padding: 30px;
   text-align: center;
-  top: 50%;
+  top: 45%;
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
