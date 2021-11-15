@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { FaLinkedinIn, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     const date = new Date();
@@ -16,21 +17,21 @@ const Footer = () => {
                         <h5>{t("footer.columns.1.FOOTER_COLUMN_TITLE")}</h5>
                         <ul>
                             <li>
-                                <a href="#x">
+                                <Link to="/about">
                                     {t("footer.columns.1.FOOTER_COLUMN_LINK_ABOUT")}
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="#x">
+                                <Link to="/services">
                                     {t("footer.columns.1.FOOTER_COLUMN_LINK_SERVICES")}
-                                </a>
+                                </Link>
                             </li>
 
                             <li>
-                                <a href="#x">
+                                <Link to="/contact">
                                     {t("footer.columns.1.FOOTER_COLUMN_LINK_CONTACT")}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </Col>

@@ -14,7 +14,7 @@ const Navigation = (props) => {
 
     const [navbarExpanded, setNavbarExpanded] = useState(false)
 
-    const handleLanguage = (_language) => {        
+    const handleLanguage = (_language) => {
         i18n.changeLanguage(_language)
         if (cookies.get("language") !== undefined) {
             props.funcSetCookie(_language)
@@ -26,7 +26,9 @@ const Navigation = (props) => {
             <Navbar variant="light" bg="light" expand="xl" expanded={navbarExpanded} fixed="top">
                 <Container>
                     <Navbar.Brand>
-                        <Image src="https://frigian.net/assets/img/frigian-dark.png" fluid alt="Frigian"></Image>
+                        <Link to="/" onClick={() => setNavbarExpanded(false)}>
+                            <Image src="https://frigian.net/assets/img/frigian-dark.png" fluid alt="Frigian"></Image>
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle onClick={() => setNavbarExpanded(true)} aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

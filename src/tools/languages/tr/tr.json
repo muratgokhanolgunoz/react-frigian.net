@@ -255,7 +255,7 @@
         "title": {
             "TITLE": "Frİgİan Paketlerİ",
             "SUBTITLE_1": "Şirketinize uygun paketi belirleyin",
-            "SUBTITLE_2": "Yıllık ödeme seçiminde %10 indirim"
+            "SUBTITLE_2": "Yıllık ödeme seçiminizde ilk ay bizden"
         },
         "items": {
             "BEST_PRICE": "En İyi Fiyat",
@@ -339,6 +339,7 @@
             "SENDER_EMAIL": "Gönderici ePosta adresi doğru formatta olmalıdır",
             "FORM_VALIDATION_AGGREMENT": "Lütfen Frigian Lisans Anlaşmasını onaylayın",
             "FORM_VALIDATION_PACKAGE": "Lütfen seçtiğiniz paket için yıllık / aylık ödeme seçimi yapın",
+            "FORM_VALIDATION_COMPANY_LOGO": "Lütfen firma logonuzu yükleyin",
             "LOGO_UPLOAD_SUCCESS_MESSAGE": "Logo başarıyla yüklendi",
             "LOGO_UPLOAD_ERROR_MESSAGE": "Logo yüklenirken br hata oluştu. Lütfen tekrar deneyin",
             "LOGO_UPLOAD_FILE_SIZE_ERROR": "Logo için dosya boyutu max. 1MB olmalıdır.",

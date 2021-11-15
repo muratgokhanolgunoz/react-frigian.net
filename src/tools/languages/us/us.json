@@ -255,7 +255,7 @@
         "title": {
             "TITLE": "Frigian Packages",
             "SUBTITLE_1": "Choose the best package for your company",
-            "SUBTITLE_2": "Save %10 for upfront yearly payment"
+            "SUBTITLE_2": "The first month of your yearly payment selection is from us"
         },
         "items": {
             "BEST_PRICE": "Best Value",
@@ -339,8 +339,9 @@
             "SENDER_EMAIL": "Sender email address must be in the correct format",
             "FORM_VALIDATION_AGGREMENT": "Please confirm the Frigian License Agreement",
             "FORM_VALIDATION_PACKAGE": "Please choose yearly / monthly payment for the package you have chosen",
+            "FORM_VALIDATION_COMPANY_LOGO": "Please upload your company logo",
             "LOGO_UPLOAD_SUCCESS_MESSAGE": "Logo successfully uploaded",
-            "LOGO_UPLOAD_ERROR_MESSAGE": "An error occured when uploading logo. Please try again", 
+            "LOGO_UPLOAD_ERROR_MESSAGE": "An error occured when uploading logo. Please try again",
             "LOGO_UPLOAD_FILE_SIZE_ERROR": "File size for logo is max. it should be 1MB",
             "DOCUMENT_UPLOAD_SUCCESS_MESSAGE": "Document successfully uploaded",
             "DOCUMENT_UPLOAD_ERROR_MESSAGE": "An error occured when uploading document. Please try again",
@@ -406,8 +407,8 @@
             "BLOG_BANNER_TITLE": "Our Articles"
         },
         "body": {
-            "BLOG_SECTION_ITEMS_AUTHOR_PREFIX": "by"            
-        }, 
+            "BLOG_SECTION_ITEMS_AUTHOR_PREFIX": "by"
+        },
         "error": {
             "BLOG_SECTION_ERROR_BLOG_NOT_FOUND": "The article was not found. Please check the link and try again",
             "BLOG_SECTION_WARNING_BLOG_NOT_FOUIND": "No article found for the language you selected."

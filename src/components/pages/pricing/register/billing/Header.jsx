@@ -17,7 +17,7 @@ const Header = () => {
         }
     ]
 
-    const handleChange = (_value) => {        
+    const handleChange = (_value) => {
         if (_value > 3) {
             const promise = new Promise(function (resolve, reject) {
                 context.setPackageUsers(parseInt(_value))
@@ -28,7 +28,7 @@ const Header = () => {
                 context.calculateYearlyPrice()
                 context.calculateMonthlyPrice()
             })
-        } 
+        }
     }
 
     return (
@@ -49,10 +49,10 @@ const Header = () => {
                                         <label>{t('register.pricingForm.NUMBER_OF_USERS')}</label>
                                         <input
                                             type="number"
-                                            style={{ borderColor: "#fff", color: "#fff" }}
+                                            style={{ borderColor: "#fff", color: "#fff", cursor: context.state.packageId === 1 ? "no-drop" : "auto" }}
                                             min={context.state.packageId === 1 ? 4 : 5}
                                             max={context.state.packageId === 1 ? 4 : 30}
-                                            disabled={context.state.packageId === 1 ? true : false}
+                                            readOnly={context.state.packageId === 1 ? true : false}
                                             value={context.state.packageUsers}
                                             onChange={(e) => handleChange(e.target.value)}
                                         ></input>
